@@ -14,28 +14,35 @@ body {
   overflow: hidden;
 }
 
-/* LOADING */
+/* LOADING BAR */
 #loading {
   position: fixed;
   width: 100%;
   height: 100%;
   background: black;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: gold;
-  font-size: 28px;
   z-index: 999;
+}
+
+#bar {
+  width: 0%;
+  height: 10px;
+  background: linear-gradient(90deg, red, gold);
+  margin-top: 20px;
+  transition: width 0.3s;
 }
 
 /* HERO */
 .hero {
   display: none;
   height: 100vh;
-  text-align: center;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 /* TITLE */
@@ -63,10 +70,9 @@ button {
   100% {transform: scale(1);}
 }
 
-/* LIVE RESULT */
+/* RESULT */
 #result {
-  margin-top: 20px;
-  font-size: 18px;
+  margin-top: 15px;
   color: gold;
 }
 
@@ -82,14 +88,15 @@ button {
 }
 
 /* CHAT */
-#chat {
+#chatbox {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  width: 200px;
   background: #300000;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* COUNTDOWN */
@@ -104,45 +111,60 @@ button {
 <body>
 
 <!-- LOADING -->
-<div id="loading">Loading JUARATOGEL...</div>
+<div id="loading">
+  <div>Loading JUARATOGEL...</div>
+  <div id="bar"></div>
+</div>
 
 <!-- MAIN -->
 <div class="hero" id="main">
   <h1>JUARATOGEL</h1>
   <p>Platform Togel Modern & Terpercaya</p>
 
-  <a href="https://loginjuaratogel.com" target="_blank">
+  <a href="https://heylink.me/juaralogin" target="_blank">
     <button>LOGIN / DAFTAR</button>
   </a>
 
   <div id="result">Result: -</div>
-  <div id="countdown">Redirect dalam 10 detik...</div>
+  <div id="countdown">Redirect dalam 12 detik...</div>
 </div>
 
 <!-- NOTIF -->
 <div id="notif"></div>
 
 <!-- CHAT -->
-<div id="chat">💬 CS Online</div>
+<div id="chatbox">
+  💬 CS: Halo kak, butuh bantuan?
+</div>
 
 <script>
 
-/* LOADING */
-setTimeout(() => {
-  document.getElementById("loading").style.display = "none";
-  document.getElementById("main").style.display = "flex";
-  document.body.style.overflow = "auto";
-}, 2000);
+/* LOADING BAR */
+let width = 0;
+const bar = document.getElementById("bar");
 
-/* FAKE RESULT */
+const load = setInterval(() => {
+  width += 10;
+  bar.style.width = width + "%";
+
+  if(width >= 100){
+    clearInterval(load);
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("main").style.display = "flex";
+    document.body.style.overflow = "auto";
+  }
+}, 200);
+
+/* LIVE RESULT */
 setInterval(() => {
   const num = Math.floor(Math.random()*9000)+1000;
   document.getElementById("result").innerHTML = "Result: " + num;
-}, 3000);
+}, 2500);
 
 /* NOTIF MENANG */
 const notif = document.getElementById("notif");
-const names = ["Budi","Andi","Rizky","Sari","Dewi"];
+const names = ["Budi","Andi","Rizky","Sari","Dewi","Agus","Rina"];
+
 setInterval(() => {
   const name = names[Math.floor(Math.random()*names.length)];
   const win = Math.floor(Math.random()*900000)+100000;
@@ -151,10 +173,16 @@ setInterval(() => {
   notif.style.display = "block";
 
   setTimeout(() => notif.style.display="none", 3000);
-}, 5000);
+}, 4000);
+
+/* CHAT AUTO */
+const chat = document.getElementById("chatbox");
+setInterval(() => {
+  chat.innerHTML = "💬 CS: Deposit minimal 10k ya kak 😊";
+}, 6000);
 
 /* COUNTDOWN */
-let time = 10;
+let time = 12;
 const cd = document.getElementById("countdown");
 
 const timer = setInterval(() => {
@@ -163,7 +191,7 @@ const timer = setInterval(() => {
 
   if(time <= 0){
     clearInterval(timer);
-    window.location.href = "https://loginjuaratogel.com";
+    window.location.href = "https://heylink.me/juaralogin";
   }
 }, 1000);
 
