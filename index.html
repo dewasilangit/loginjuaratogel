@@ -1,165 +1,173 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JUARATOGEL</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JUARATOGEL</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f172a;
-      color: white;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle, #2b0000, #000);
+  color: white;
+  overflow: hidden;
+}
 
-    .hero {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c44367f') center/cover;
-      position: relative;
-    }
+/* LOADING */
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gold;
+  font-size: 28px;
+  z-index: 999;
+}
 
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-    }
+/* HERO */
+.hero {
+  display: none;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-    .hero-content {
-      position: relative;
-      text-align: center;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+/* TITLE */
+h1 {
+  font-size: 70px;
+  color: gold;
+  text-shadow: 0 0 20px gold, 0 0 50px red;
+}
 
-    .hero h1 {
-      font-size: 60px;
-      color: gold;
-    }
+/* BUTTON */
+button {
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, red, gold);
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  font-weight: bold;
+}
 
-    button {
-      padding: 12px 25px;
-      background: gold;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 8px;
-    }
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
 
-    .features {
-      padding: 60px 20px;
-      text-align: center;
-    }
+/* LIVE RESULT */
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: gold;
+}
 
-    .feature-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-    }
+/* NOTIF */
+#notif {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #300000;
+  padding: 15px;
+  border-radius: 10px;
+  display: none;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 15px;
-      width: 200px;
-      transition: 0.3s;
-    }
+/* CHAT */
+#chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #300000;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+}
 
-    .card:hover {
-      transform: translateY(-10px);
-      background: #334155;
-    }
-
-    .game {
-      padding: 60px;
-      text-align: center;
-    }
-
-    .game-box {
-      background: linear-gradient(135deg, gold, orange);
-      padding: 40px;
-      border-radius: 20px;
-      color: black;
-    }
-
-    .cta {
-      padding: 60px;
-      text-align: center;
-      background: #111827;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: black;
-    }
-  </style>
+/* COUNTDOWN */
+#countdown {
+  margin-top: 10px;
+  color: gold;
+}
+</style>
 
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>JUARATOGEL</h1>
-      <p>Platform Togel Modern & Terpercaya</p>
-      <a href="https://heylink.me/juaralogin" target="_blank">
-        <button>Login / Daftar</button>
-      </a>
-    </div>
-  </section>
+<!-- LOADING -->
+<div id="loading">Loading JUARATOGEL...</div>
 
-  <!-- FEATURES -->
-  <section class="features">
-    <h2>Kenapa Pilih Kami?</h2>
+<!-- MAIN -->
+<div class="hero" id="main">
+  <h1>JUARATOGEL</h1>
+  <p>Platform Togel Modern & Terpercaya</p>
 
-    <div class="feature-grid">
-      <div class="card">
-        <h3>⚡ Cepat</h3>
-        <p>Proses instan tanpa ribet</p>
-      </div>
+  <a href="https://loginjuaratogel.com" target="_blank">
+    <button>LOGIN / DAFTAR</button>
+  </a>
 
-      <div class="card">
-        <h3>🔒 Aman</h3>
-        <p>Sistem keamanan modern</p>
-      </div>
+  <div id="result">Result: -</div>
+  <div id="countdown">Redirect dalam 10 detik...</div>
+</div>
 
-      <div class="card">
-        <h3>💰 Jackpot</h3>
-        <p>Peluang menang besar</p>
-      </div>
-    </div>
-  </section>
+<!-- NOTIF -->
+<div id="notif"></div>
 
-  <!-- GAME -->
-  <section class="game">
-    <div class="game-box">
-      <h2>Game Unggulan</h2>
-      <p>Mainkan sekarang dan raih kemenanganmu!</p>
-      <a href="https://heylink.me/juaralogin" target="_blank">
-        <button>Main Sekarang</button>
-      </a>
-    </div>
-  </section>
+<!-- CHAT -->
+<div id="chat">💬 CS Online</div>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Gabung Sekarang</h2>
-    <p>Jadilah bagian dari JUARATOGEL hari ini</p>
-    <a href="https://heylink.me/juaralogin" target="_blank">
-      <button>Daftar</button>
-    </a>
-  </section>
+<script>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 JUARATOGEL. All Rights Reserved.</p>
-  </footer>
+/* LOADING */
+setTimeout(() => {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("main").style.display = "flex";
+  document.body.style.overflow = "auto";
+}, 2000);
+
+/* FAKE RESULT */
+setInterval(() => {
+  const num = Math.floor(Math.random()*9000)+1000;
+  document.getElementById("result").innerHTML = "Result: " + num;
+}, 3000);
+
+/* NOTIF MENANG */
+const notif = document.getElementById("notif");
+const names = ["Budi","Andi","Rizky","Sari","Dewi"];
+setInterval(() => {
+  const name = names[Math.floor(Math.random()*names.length)];
+  const win = Math.floor(Math.random()*900000)+100000;
+
+  notif.innerHTML = `${name} menang Rp${win}`;
+  notif.style.display = "block";
+
+  setTimeout(() => notif.style.display="none", 3000);
+}, 5000);
+
+/* COUNTDOWN */
+let time = 10;
+const cd = document.getElementById("countdown");
+
+const timer = setInterval(() => {
+  time--;
+  cd.innerHTML = "Redirect dalam " + time + " detik...";
+
+  if(time <= 0){
+    clearInterval(timer);
+    window.location.href = "https://loginjuaratogel.com";
+  }
+}, 1000);
+
+</script>
 
 </body>
 </html>
