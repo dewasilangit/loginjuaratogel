@@ -1,201 +1,128 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JUARATOGEL</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle, #2b0000, #000);
-  color: white;
-  overflow: hidden;
-}
-
-/* LOADING BAR */
-#loading {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-#bar {
-  width: 0%;
-  height: 10px;
-  background: linear-gradient(90deg, red, gold);
-  margin-top: 20px;
-  transition: width 0.3s;
-}
-
-/* HERO */
-.hero {
-  display: none;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-/* TITLE */
-h1 {
-  font-size: 70px;
-  color: gold;
-  text-shadow: 0 0 20px gold, 0 0 50px red;
-}
-
-/* BUTTON */
-button {
-  padding: 15px 40px;
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(45deg, red, gold);
-  cursor: pointer;
-  animation: pulse 1.5s infinite;
-  font-weight: bold;
-}
-
-@keyframes pulse {
-  0% {transform: scale(1);}
-  50% {transform: scale(1.1);}
-  100% {transform: scale(1);}
-}
-
-/* RESULT */
-#result {
-  margin-top: 15px;
-  color: gold;
-}
-
-/* NOTIF */
-#notif {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #300000;
-  padding: 15px;
-  border-radius: 10px;
-  display: none;
-}
-
-/* CHAT */
-#chatbox {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 200px;
-  background: #300000;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 13px;
-}
-
-/* COUNTDOWN */
-#countdown {
-  margin-top: 10px;
-  color: gold;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UANGTOGEL DASHBOARD GENERATE 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f0f0f;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 { color: #ffd700; font-size: 28px; margin: 15px 0; }
+        h2 { color: #ff4444; font-size: 26px; }
+        .warning { color: #ffeb3b; font-size: 24px; font-weight: bold; }
+        button {
+            background: #ff0000;
+            color: white;
+            padding: 14px 28px;
+            font-size: 18px;
+            margin: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background: #ff5555; }
+        table {
+            width: 90%;
+            max-width: 850px;
+            margin: 25px auto;
+            border-collapse: collapse;
+            background: #1a1a1a;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+        .container { max-width: 950px; margin: auto; }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>UANGTOGEL DASHBOARD GENERATE 2026</h1>
 
-<!-- LOADING -->
-<div id="loading">
-  <div>Loading JUARATOGEL...</div>
-  <div id="bar"></div>
-</div>
+        <h2 class="warning">RUDI RUDI RUDIII !!</h2>
+        <h2>NGAPAIN BOS? MAU NYOLONG YA?! 😂</h2>
+        <p style="font-size:20px; margin:20px 0;">Akses ditolak. Silakan refresh halaman untuk kembali.</p>
 
-<!-- MAIN -->
-<div class="hero" id="main">
-  <h1>JUARATOGEL</h1>
-  <p>Platform Togel Modern & Terpercaya</p>
+        <hr style="border-color:#333;">
+        
+        <h3>CREATED BY BABANG CALVIN 😎</h3>
+        <p><strong>UANGTOGEL - SITUS TOGEL TERPERCAYA - TEAM UANGTOGEL</strong></p>
 
-  <a href="https://heylink.me/juaralogin" target="_blank">
-    <button>LOGIN / DAFTAR</button>
-  </a>
+        <h3>1. RUMUS PREDIKSI</h3>
+        <button onclick="generatePrediksi()">GENERATE</button>
+        <p>Pilih pasaran terlebih dahulu.</p>
 
-  <div id="result">Result: -</div>
-  <div id="countdown">Redirect dalam 12 detik...</div>
-</div>
+        <table id="prediksiTable">
+            <tr><th>PREDIKSI</th><th colspan="4"></th></tr>
+            <tr><td>PASARAN</td><td colspan="4" id="pasaran">-</td></tr>
+            <tr><td>TANGGAL</td><td colspan="4" id="tanggal">-</td></tr>
+            <tr><td>BBFS/POLTAR</td><td colspan="4" id="bbfs">-</td></tr>
+            <tr><td>ANGKA MAIN</td><td colspan="4" id="angka">-</td></tr>
+            <tr><td>5D BB</td><td colspan="4" id="5d">-</td></tr>
+            <tr><td>4D BB</td><td colspan="4" id="4d">-</td></tr>
+            <tr><td>3D BB</td><td colspan="4" id="3d">-</td></tr>
+            <tr><td>2D BB</td><td colspan="4" id="2d">-</td></tr>
+            <tr><td>CB</td><td colspan="4" id="cb">-</td></tr>
+            <tr><td>TWIN</td><td colspan="4" id="twin">-</td></tr>
+        </table>
 
-<!-- NOTIF -->
-<div id="notif"></div>
+        <h3>2. CODE BUKTI BET PASARAN (BET SUKSES)</h3>
+        <button onclick="generateBet()">GENERATE SCRIPT COPY HTML</button>
 
-<!-- CHAT -->
-<div id="chatbox">
-  💬 CS: Halo kak, butuh bantuan?
-</div>
+        <h3>3. CODE BUKTI JP SEMUA PASARAN / KECUALI TOTOMACAU (FULL)</h3>
+        <button onclick="generateJP()">GENERATE BIASA COPY CODE</button>
 
-<script>
+        <h3>4. CODE BUKTI JP PASARAN TOTOMACAU ( FULL)</h3>
+        <button onclick="generateMacau()">GENERATE MACAU COPY CODE</button>
 
-/* LOADING BAR */
-let width = 0;
-const bar = document.getElementById("bar");
+        <h3>5. REELS PREDIKSI (ANTI TWIN & URUT)</h3>
+        <p><strong>ANTI TWIN • ANTI URUT • PRESESI FORMAT</strong></p>
+        <button onclick="generateReels()">GENERATE & COPY OTOMATIS</button>
 
-const load = setInterval(() => {
-  width += 10;
-  bar.style.width = width + "%";
+        <p style="margin-top:40px; font-size:18px; font-weight:bold;">
+            SILAHKAN KLIK GENERATE TERLEBIH DAHULU BROO!!
+        </p>
+    </div>
 
-  if(width >= 100){
-    clearInterval(load);
-    document.getElementById("loading").style.display = "none";
-    document.getElementById("main").style.display = "flex";
-    document.body.style.overflow = "auto";
-  }
-}, 200);
+    <script>
+        function generatePrediksi() {
+            const pasaran = ["Singapore", "Hongkong", "Sydney", "Toto Macau", "Cambodia"];
+            document.getElementById("pasaran").innerText = pasaran[Math.floor(Math.random()*pasaran.length)];
+            document.getElementById("tanggal").innerText = "03 April 2026";
+            document.getElementById("bbfs").innerText = "12 34 56 78 90";
+            document.getElementById("angka").innerText = "4782";
+            document.getElementById("5d").innerText = "12478";
+            document.getElementById("4d").innerText = "2478";
+            document.getElementById("3d").innerText = "478";
+            document.getElementById("2d").innerText = "78";
+            document.getElementById("cb").innerText = "45";
+            document.getElementById("twin").innerText = "88";
+            alert("✅ Rumus Prediksi berhasil di-generate!");
+        }
 
-/* LIVE RESULT */
-setInterval(() => {
-  const num = Math.floor(Math.random()*9000)+1000;
-  document.getElementById("result").innerHTML = "Result: " + num;
-}, 2500);
+        function generateBet() {
+            alert("✅ Code Bukti Bet (HTML) berhasil di-generate!\n\n(Sudah dicopy ke clipboard - contoh)");
+        }
 
-/* NOTIF MENANG */
-const notif = document.getElementById("notif");
-const names = ["Budi","Andi","Rizky","Sari","Dewi","Agus","Rina"];
+        function generateJP() {
+            alert("✅ Code Bukti JP Full berhasil di-generate!");
+        }
 
-setInterval(() => {
-  const name = names[Math.floor(Math.random()*names.length)];
-  const win = Math.floor(Math.random()*900000)+100000;
+        function generateMacau() {
+            alert("✅ Code Bukti JP Toto Macau berhasil di-generate!");
+        }
 
-  notif.innerHTML = `${name} menang Rp${win}`;
-  notif.style.display = "block";
-
-  setTimeout(() => notif.style.display="none", 3000);
-}, 4000);
-
-/* CHAT AUTO */
-const chat = document.getElementById("chatbox");
-setInterval(() => {
-  chat.innerHTML = "💬 CS: Deposit minimal 10k ya kak 😊";
-}, 6000);
-
-/* COUNTDOWN */
-let time = 12;
-const cd = document.getElementById("countdown");
-
-const timer = setInterval(() => {
-  time--;
-  cd.innerHTML = "Redirect dalam " + time + " detik...";
-
-  if(time <= 0){
-    clearInterval(timer);
-    window.location.href = "https://heylink.me/juaralogin";
-  }
-}, 1000);
-
-</script>
-
+        function generateReels() {
+            alert("✅ Reels Prediksi Anti Twin & Urut berhasil di-generate dan dicopy otomatis!");
+        }
+    </script>
 </body>
 </html>
